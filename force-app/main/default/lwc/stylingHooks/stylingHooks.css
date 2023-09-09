@@ -1,0 +1,20 @@
+.formatcard {
+    --slds-c-card-color-background: var(---lwc-brandPrimaryActive);
+    --slds-c-card-text-color: red;
+}
+
+.formatbutton {
+    --slds-c-button-brand-color-background: purple;
+    --slds-c-button-brand-color-background-active: purple;
+    --slds-c-button-brand-color-background-hover: purple;
+    --slds-c-button-brand-color-border: green;
+}
+
+.formatbadge {
+    --slds-c-badge-color-background: purple;
+    --slds-c-badge-text-color: red;
+}
+
+.formatedpill {
+    --slds-c-pill-color-background: orange;
+}
