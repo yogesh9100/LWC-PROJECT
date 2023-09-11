@@ -1,0 +1,1 @@
+console.log('Inside Js following LWC Bottcamp');
