@@ -45,8 +45,10 @@
             onclick={divHandler}
             ></lightning-button>
         </div>
+     <template lwc:if={displayOutput}>
         <div class="slds-var-p-around_small">
             <p>Output : {result}</p>
         </div>
+     </template>
     </lightning-card>
 </template>
