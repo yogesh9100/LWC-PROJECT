@@ -3,16 +3,20 @@
     <apiVersion>58.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
-        <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
-        <target>lightning__FlowScreen</target>
         <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <!-- Add any configuration specific to your component -->
+
+        <targetConfig targets="lightning__FlowScreen">
+
+            <property name="firstName" type="String" label="First Name" description="First Name"/>
+
+            <property name="lastName" type="String" label="Last Name" description="Last Name"/>  
+
         </targetConfig>
+
     </targetConfigs>
-    <description>Display Contact First Name and Last Name</description>
-    <masterLabel>Contact Details</masterLabel>
+
 </LightningComponentBundle>
