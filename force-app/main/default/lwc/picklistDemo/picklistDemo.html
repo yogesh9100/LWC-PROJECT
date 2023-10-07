@@ -1,0 +1,43 @@
+<template> 
+    <lightning-card title="Picklist Demo-uiObjectInfoApi"> 
+        <template lwc:if={industrypicklist.data}> 
+            <lightning-combobox 
+            name="progress" 
+            label="Industry" 
+            value={value} 
+            placeholder="Select Industry" 
+            options={industrypicklist.data.values} 
+            onchange={handleChange} 
+            class="slds-var-p-round_small"> 
+        </lightning-combobox> 
+ 
+    <p>Selected value is: {value}</p> 
+        </template> 
+ 
+    </lightning-card>
+    <lightning-card title="Get Picklist Values by RecordType-uiObjectInfoApi"> 
+        <template lwc:if={accountInfoPicklist.data}> 
+            <lightning-combobox 
+            name="Rating" 
+            label="Rating" 
+            value={value} 
+            placeholder="Select Rating" 
+            options={accountInfoPicklist.data.picklistFieldValues.Rating.values} 
+            onchange={handleChange} 
+            class="slds-var-p-round_small"> 
+           </lightning-combobox>
+           <lightning-combobox 
+            name="Priority" 
+            label="Customer Priority" 
+            value={value} 
+            placeholder="Select Priority" 
+            options={accountInfoPicklist.data.picklistFieldValues.CustomerPriority__c.values} 
+            onchange={handleChange} 
+            class="slds-var-p-round_small"> 
+         </lightning-combobox> 
+ 
+          <p>Selected value is: {value}</p> 
+        </template> 
+ 
+    </lightning-card> 
+</template>
