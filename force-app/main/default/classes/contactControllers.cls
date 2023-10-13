@@ -1,0 +1,18 @@
+public with sharing class contactControllers {
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> getContactsList()
+    {
+        List<Contact> Contactlist=[Select id,
+        Name,
+        FirstName, 
+        LastName,
+        Email,PhotoUrl
+         from 
+         Contact where 
+         PhotoUrl != null with USER_MODE 
+         LIMIT 10];
+         
+         return Contactlist;
+
+    }
+}
