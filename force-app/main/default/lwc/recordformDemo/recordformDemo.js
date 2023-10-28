@@ -16,7 +16,7 @@ export default class RecordformDemo extends NavigationMixin(LightningElement) {
       title: 'Success',
       message: 'Record Update Successfully!',
       variant: "success"
-    });
+    }); 
     this.dispatchEvent(event);
   }
 
