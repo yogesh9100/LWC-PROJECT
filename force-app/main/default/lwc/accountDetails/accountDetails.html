@@ -1,7 +1,6 @@
-<template>
-    <lightning-card title = "Create Account" 
+<template> 
+    <lightning-card title ={formTitle}
                     icon-name = "custom:custom"> 
-     
     <div class="slds-var-p-around_small"> 
         <lightning-combobox 
                         name = "parentacc" 
@@ -11,6 +10,7 @@
                         onchange = {handleChange}  
                         required = "true" 
                         class = "validateme" 
+                        value={selParentAcc}
                         message-when-value-missing = "Please select Parent Account "> 
         </lightning-combobox> 
         <lightning-input type = "text" 
@@ -24,21 +24,23 @@
                          message-when-too-short = "minimum length of Account Name is 2" 
                          message-when-too-long = "Maximium length of Account Name is 60" 
                          onchange = {handleChange} 
-                         class = "validateme"> 
+                         class = "validateme"
+                         value={selAccName}> 
         </lightning-input> 
         <lightning-input type = "Date" 
                          onchange =  {handleChange} 
                          label =  "SLA Expiration Date" 
-                         name = "slaexpdt"> 
+                         name = "slaexpdt"
+                         value={selExpDate}> 
         </lightning-input> 
-    <template lwc:if = {slapicklist.data}> 
-        
+    <template lwc:if = {slapicklist.data}>   
         <lightning-radio-group name = "slatype" 
                            label = "SLA Type" 
                            options = {slapicklist.data.values} 
                            required = "true" 
                            type = "button" 
-                           onchange =  {handleChange}> 
+                           onchange =  {handleChange}
+                           value={selSlaType}> 
         </lightning-radio-group> 
     </template> 
          <lightning-slider label = "Number of Locations"  
@@ -46,20 +48,30 @@
                             max = "50" 
                             step = "1" 
                             value = {selnoOfLocations} 
-                            onchange =  {handleChange} 
+                            onchange = {handleChange} 
                             name = "nooflocations"> 
         </lightning-slider> 
         <lightning-input-rich-text label="Description"  
                                     name = "description" 
                                     disabled-categories = "FORMAT_TEXT, FORMAT_FONT" 
-                                    onchange = {handleChange}> 
+                                    onchange = {handleChange}
+                                    value={selDescription}> 
         </lightning-input-rich-text> 
     </div> 
-    <div class="slds-var-p-around_small"> 
+    
         <lightning-button label = "Save"  
                           variant = "brand" 
-                          onclick = {saveRecord}> 
+                          onclick ={saveRecord}
+                          class="slds-var-p-around_small"> 
         </lightning-button> 
-    </div> 
+ 
+    <template lwc:if={IsDelete}>
+        <lightning-button label = "Delete"  
+                          variant = "destructive" 
+                          onclick ={deleteHandler}
+                          class="slds-var-p-around_small"> 
+        </lightning-button> 
+
+</template> 
     </lightning-card> 
 </template>
