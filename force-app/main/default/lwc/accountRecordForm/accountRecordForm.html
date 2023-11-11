@@ -1,0 +1,10 @@
+<template>
+    <div class="container">
+        <h1>Create an Account Record</h1>
+        <img src={christmasImage} alt="Christmas Image" width="200" height="200" class="christmas-image" />
+        <lightning-input label="Account Name" value={accountName} onchange={handleNameChange}></lightning-input>
+        <lightning-input label="Account Email" type="email" value={accountEmail} onchange={handleEmailChange}></lightning-input>
+        <lightning-input label="Account Password" type="password" value={accountPassword} onchange={handlePasswordChange}></lightning-input>
+        <lightning-button label="Save" variant="brand" onclick={saveRecord}></lightning-button>
+    </div>
+</template>
