@@ -9,24 +9,25 @@
         >
         <div class="slds-m-around_small">
             <lightning-input-field
-            value={fields.accountName}
+            field-name={fields.accountName}
             ></lightning-input-field>
             <lightning-input-field
-            value={fields.accountIndustry}
+            field-name={fields.accountIndustry}
             ></lightning-input-field>
         </div>
-        <div slot="footer">
+        
             <lightning-button
             label="save" 
             variant="brand" 
             type="submit"
+            class="slds-var-p-around_small"
             ></lightning-button>
             <lightning-button
             label="cancel" 
             variant="brand" 
             onclick={closemodal}
             ></lightning-button>
-        </div>
+        
 
     </lightning-record-edit-form>
     </lightning-quick-action-panel>

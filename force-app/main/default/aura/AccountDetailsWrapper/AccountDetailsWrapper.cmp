@@ -1,0 +1,4 @@
+<aura:component implements="lightning:actionOverride, force:hasRecordId">
+    <c:accountDetails recordId="{!v.recordId}"></c:accountDetails>
+
+</aura:component>	
